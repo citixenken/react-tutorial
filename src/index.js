@@ -26,6 +26,15 @@ class Board extends React.Component {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
+    // let message;
+    // if (calculateWinner(squares)) {
+    //   message = "Game already WON!";
+    //   return;
+    // }
+    // if (squares[i]) {
+    //   message = "Square already filled!";
+    //   return;
+    // }
     squares[i] = this.state.xIsNext ? "X" : "O";
     this.setState({ squares: squares, xIsNext: !this.state.xIsNext });
   }
@@ -50,6 +59,7 @@ class Board extends React.Component {
     return (
       <div>
         <div className="status">{status}</div>
+        {/* <div className="message">{message}</div> */}
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
